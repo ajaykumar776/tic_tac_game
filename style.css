@@ -37,3 +37,8 @@ body{
     
 
 }
+.nobold {
+    /* font-weight: normal;
+     */
+     color: brown;
+}

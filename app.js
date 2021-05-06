@@ -1,30 +1,44 @@
 var count =1;
 
 function getData(item){
+    
+        if(count<=9){
 
-    if(count<=9){
+            if(count%2!=0){
 
-        if(count%2!=0){
+                    if(putData(item.id,"X")){
 
-            putData(item.id,"X");
+                    document.getElementById(item.id).style.color = "green";
+                    
 
-        }else{
-            putData(item.id,"0");
+                        
+                    }
 
-        }
-        winner();
-        count++;
-        if(count>=3){
+
+                // putData(item.id,"X")
+        
+            
+            }else{
+            
+                putData(item.id,"0");
+
+                document.getElementById(item.id).style.color = "red";
+
+            }
+            winner();
+            count++;
             if(winner()){
-                alert('winner');
+                var va = document.getElementById(item.id).innerText;
+                alert(va + " " +'is winer')
                 reset();
             }
+        }else
+        {
+            var Draw = "opp's"
+            alert(Draw  +""+'Game Draw');
+            reset();
         }
-    }else
-    {
-        alert('Game Draw');
-        reset();
-    }
+    
 }
 
 // for reset the value 
@@ -53,7 +67,7 @@ function winner(div){
 
 function checkCondition(div1 ,div2 ,div3){
 
-    if(getDiv(div1)!=="" && getDiv(div2)!=="" && getDiv(div3)!=="" &&getDiv(div1) == getDiv(div2) && getDiv(div2)==getDiv(div3))
+    if(getDiv(div1)!=="" && getDiv(div2)!=="" && getDiv(div3)!=="" && getDiv(div1) == getDiv(div2) && getDiv(div2)== getDiv(div3))
     {
         return true;
     }
@@ -70,7 +84,11 @@ function getDiv(div)
 //
 function putData(div,data){
 
+    
+
     return document.getElementById(div).innerHTML = data;
+
+
 }
 
 
