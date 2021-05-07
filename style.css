@@ -7,7 +7,7 @@
     font-size: 50px;
     text-align: center;
     margin-left: 0px;
-    background-color:aqua;
+    background-color:brown;
    
 } 
 #div1,#div4,#div7{
@@ -37,8 +37,11 @@ body{
     
 
 }
-.nobold {
-    /* font-weight: normal;
-     */
-     color: brown;
+.nobold{
+    /* pointer-events: none;
+    opacity: 0.5;
+    background: #CCC; */
+    background-color: brown;
+    /* font-weight: normal; */
+    
 }

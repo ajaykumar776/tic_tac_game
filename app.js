@@ -1,27 +1,29 @@
+ 
 var count =1;
-var c = 0 ;
 
 function getData(item){
-
     
         if(count<=9){
 
             if(count%2!=0){
 
-
                 if(putData(item.id,"X")){
-                
-                document.getElementById(item.id).style.color = "green";
-                
 
-                } 
+                // document.getElementById(item.id).style.color = "green";
+
+                let div = document.getElementById(item.id);
+                div.style.color =  "green";
+                div.removeAttribute('onclick');
+
+                }
+        
             
             }else{
             
                 putData(item.id,"0");
-
-                document.getElementById(item.id).style.color = "red";
-
+                let div = document.getElementById(item.id);
+                div.style.color =  "red";
+                div.removeAttribute('onclick');
             }
             winner();
             count++;
@@ -29,13 +31,14 @@ function getData(item){
                 var va = document.getElementById(item.id).innerText;
                 alert(va + " " +'is winer')
                 reset();
+                }
+            }else
+            {
+                var Draw = "opp's"
+                alert(Draw  +""+'Game Draw');
+                reset();
             }
-        }else
-        {
-            var Draw = "opp's"
-            alert(Draw  +""+'Game Draw');
-            reset();
-        }
+        
     
 }
 
@@ -45,7 +48,12 @@ function getData(item){
 function reset(){
 
     for(var i=1;i<=9;i++){
-        document.getElementById('div'+i).innerHTML ="";
+
+        let div = document.getElementById('div'+i);
+        div.innerHTML = "";
+        div.setAttribute('onclick', 'getData(this)');
+
+         
     }
     return count =1;
 }
@@ -88,12 +96,3 @@ function putData(div,data){
 
 
 }
-
-
-    
-
-      
-
-
-    
-
