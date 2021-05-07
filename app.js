@@ -1,22 +1,20 @@
 var count =1;
+var c = 0 ;
 
 function getData(item){
+
     
         if(count<=9){
 
             if(count%2!=0){
 
-                    if(putData(item.id,"X")){
 
-                    document.getElementById(item.id).style.color = "green";
-                    
+                if(putData(item.id,"X")){
+                
+                document.getElementById(item.id).style.color = "green";
+                
 
-                        
-                    }
-
-
-                // putData(item.id,"X")
-        
+                } 
             
             }else{
             
